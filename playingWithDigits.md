@@ -1,4 +1,4 @@
-## CodeWars #14 Playing with digits![6 kyu](/img/kyu6.png)
+## CodeWars #14 Playing with digits!
 
 ![code wars badge](https://www.codewars.com/users/FreePhoenix/badges/large)
 
