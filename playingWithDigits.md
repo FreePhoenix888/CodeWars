@@ -2,7 +2,7 @@
 
 ![code wars badge](https://www.codewars.com/users/FreePhoenix/badges/large)
 
-#### [kata](https://www.codewars.com/kata/playing-with-digits/javascript)
+#### [KATA](https://www.codewars.com/kata/playing-with-digits/javascript)
 
 ### Description:
 
