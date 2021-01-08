@@ -40,8 +40,6 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flo
     			Math.floor(Number.parseInt(available[key]) / Number.parseInt(recipe[key]))
     	);
     	}
-    	console.log(difference);
     	difference.sort((a, b) => a - b);
-    	console.log(difference);
     	return difference[0];
     }
