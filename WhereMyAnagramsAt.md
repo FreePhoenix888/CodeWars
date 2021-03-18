@@ -35,3 +35,32 @@ What is an anagram? Well, two words are anagrams of each other if they both cont
     		return x.sort() === word.sort();
     });
     }
+    
+    
+## 2 Solution:
+
+    function anagrams(word, words) {
+    	let result = [];
+    	for (let i = 0; i < words.length; i++) {
+    		// Checks if lengths are not equal
+    		if (word.length != words[i].length) {
+    			continue;
+    		}
+
+    		// Sorts word and words to compare. adad = aadd
+    		let sortedWord = [...word].sort();
+    		let sortedWordToCompare = [...words[i]].sort();
+
+    		// Compare arrays of letters
+    		for (let j = 0; j < word.length; j++) {
+    			if (sortedWord[j] != sortedWordToCompare[j]) {
+    				break;
+    			}
+
+    			if (j == word.length - 1) {
+    				result.push(words[i]);
+    			}
+    		}
+    	}
+    	return result;
+    }
