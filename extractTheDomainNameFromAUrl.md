@@ -10,9 +10,9 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 ### Example:
 
-domainName("http://github.com/carbonfive/raygun") == "github"
-domainName("http://www.zombie-bites.com") == "zombie-bites"
-domainName("https://www.cnet.com") == "cnet"
+    domainName("http://github.com/carbonfive/raygun") == "github"
+    domainName("http://www.zombie-bites.com") == "zombie-bites"
+    domainName("https://www.cnet.com") == "cnet"
 
 ## 1 Solution:
 
