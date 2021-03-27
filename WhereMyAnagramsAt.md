@@ -23,6 +23,9 @@ What is an anagram? Well, two words are anagrams of each other if they both cont
     anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
 
     anagrams('laser', ['lazing', 'lazy', 'lacer']) => []
+    
+    
+# JS
 
 ## 1 Solution:
 
@@ -63,4 +66,35 @@ What is an anagram? Well, two words are anagrams of each other if they both cont
     		}
     	}
     	return result;
+    }
+
+
+# C#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public static class Kata
+    {
+        public static List<string> Anagrams(string word, List<string> words)
+        {
+            List<string> result = new List<string>(words.Count());
+
+            char[] wordLetters = word.ToLower().ToCharArray();
+            Array.Sort(wordLetters);
+
+            foreach (string wordFromList in words)
+            {
+                char[] wordFromListLetters = wordFromList.ToLower().ToCharArray();
+                Array.Sort(wordFromListLetters);
+
+                if(Enumerable.SequenceEqual(wordLetters, wordFromListLetters))
+                {
+                    result.Add(wordFromList);
+                }
+            }
+
+            return result;
+            throw new NotImplementedException();
+        }
     }
