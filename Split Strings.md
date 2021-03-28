@@ -29,13 +29,13 @@ public class SplitString
 		string[] result = new string[(int)Math.Ceiling((double)str.Length / 2)];
 		int resultPosition = 0;
         
-        // If not even length append '_'
+        	// If not even length append '_'
 		if (str.Length % 2 != 0)
 		{
 			str += '_';
 		}
 
-        // Pushes symbol pairs from string to array
+        	// Pushes symbol pairs from string to array
 		for (int i = 0; i < str.Length; i += 2)
 		{
 			result[resultPosition++] = new string (new char[]{str[i], str[i + 1]});
