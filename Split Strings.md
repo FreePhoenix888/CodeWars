@@ -21,101 +21,32 @@ If the string contains an odd number of characters then it should replace the mi
 
 ```CS
 using System;
-using System.Text;
 
 public class SplitString
 {
-    public static string[] Solution(string str)
-    {
-        using System;
-    class Program
-    {
-        static void Main()
-        {
-            SplitString.Solution("abcdefgjj");
-        }
-    }
-    public class SplitString
-    {
-        public static string[] Solution(string str)
-        {
-            string[] result = new string[(int)Math.Ceiling((double)str.Length / 2)];
-            int resultPosition = 0;
+	public static string[] Solution(string str)
+	{
+		string[] result = new string[(int)Math.Ceiling((double)str.Length / 2)];
+		int resultPosition = 0;
+        
+        // If not even length append '_'
+		if (str.Length % 2 != 0)
+		{
+			str += '_';
+		}
 
-            if (str.Length % 2 != 0)
-            {
-                str += '_';
-            }
-            for (int i = 0; i < str.Length; i += 2)
-            {
-                result[resultPosition++] = new string(new char[] { str[i], str[i + 1] });
-            }
-            return result;
-        }
-    }
-    string[] result = new string[(int)Math.Ceiling((double)str.Length / 2)];
-        int resultPosition = 0;
+        // Pushes symbol pairs from string to array
+		for (int i = 0; i < str.Length; i += 2)
+		{
+			result[resultPosition++] = new string (new char[]{str[i], str[i + 1]});
+		}
 
-        StringBuilder twoChars = new StringBuilder(2);
-
-        for (int i = 0; i <= str.Length; i++)
-        {
-            if (str.Length % 2 != 0 && i == str.Length)
-            {
-                twoChars.Append('_');
-            }
-            if (twoChars.Length == 2)
-            {
-                result[resultPosition++] = twoChars.ToString();
-                twoChars.Clear();
-            }
-            if (i < str.Length)
-            {
-                twoChars.Append(str[i]);
-            }
-        }
-        return result;
-    }
+		return result;
+	}
 }
  ```
 
 ## Solution 2
-
-```CS
-using System;
-using System.Text;
-
-public class SplitString
-{
-    public static string[] Solution(string str)
-    {
-        string[] result = new string[(int)Math.Ceiling((double)str.Length / 2)];
-        int resultPosition = 0;
-
-        StringBuilder twoChars = new StringBuilder(2);
-
-        for (int i = 0; i <= str.Length; i++)
-        {
-            if (str.Length % 2 != 0 && i == str.Length)
-            {
-                twoChars.Append('_');
-            }
-            if (twoChars.Length == 2)
-            {
-                result[resultPosition++] = twoChars.ToString();
-                twoChars.Clear();
-            }
-            if (i < str.Length)
-            {
-                twoChars.Append(str[i]);
-            }
-        }
-        return result;
-    }
-}
- ```
-
-## Solution 3
 
 ```CS
 using System.Text.RegularExpressions;
@@ -125,10 +56,13 @@ public class SplitString
 {
     public static string[] Solution(string str)
     {
+        // If not even length append '_'
         if (str.Length % 2 != 0)
         {
             str += "_";
         }
+        
+        // Puts symbol pairs to the array and returns
         return Regex.Matches(str, @"\w{2}").Select(m => m.Value).ToArray();
     }
 }
