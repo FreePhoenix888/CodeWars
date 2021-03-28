@@ -20,18 +20,20 @@ If the input string is empty, return an empty string. The words in the input Str
 
 ## Solution:
 
-    function order(words) {
-        if (words == "") return words;
-        const word = words.split(" ");
-        let index,
-            result = [],
-            sorted = [],
-            tempElement = [];
-        word.forEach((element, i) => {
-            [...element].forEach(
-                (letter, j) => !isNaN(Number(letter)) && (index = Number(letter))
-            );
-            result[index - 1] = element;
-        });
-        return result.join(" ");
-    }
+```JS
+function order(words) {
+  if (words == "") return words;
+  const word = words.split(" ");
+  let index,
+    result = [],
+    sorted = [],
+    tempElement = [];
+  word.forEach((element, i) => {
+    [...element].forEach(
+      (letter, j) => !isNaN(Number(letter)) && (index = Number(letter))
+    );
+    result[index - 1] = element;
+  });
+  return result.join(" ");
+}
+```
