@@ -20,23 +20,23 @@ Note: If the number is a multiple of both 3 and 5, only count it once. Also, if 
 # C#
 
 ```CS
-     public static class Kata
+public static class Kata
+{
+    public static int Solution(int value)
     {
-        public static int Solution(int value)
+        if (value < 0) return 0;
+
+        int result = 0;
+
+        for (int i = 3; i < value; i++)
         {
-            if (value < 0) return 0;
-
-            int result = 0;
-
-            for (int i = 3; i < value; i++)
+            if (i % 3 == 0 || i % 5 == 0)
             {
-                if(i % 3 == 0 || i % 5 == 0)
-                {
-                    result += i;
-                }
+                result += i;
             }
-
-            return result;
         }
+
+        return result;
     }
+}
  ```
