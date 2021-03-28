@@ -20,7 +20,7 @@ If the string contains an odd number of characters then it should replace the mi
 ## Solution 1
 
 ```CS
- using System;
+using System;
 using System.Text;
 
 public class SplitString
@@ -118,7 +118,7 @@ public class SplitString
 ## Solution 3
 
 ```CS
- using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using System.Linq;
 
 public class SplitString
