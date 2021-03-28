@@ -61,7 +61,7 @@ function anagrams(word, words)
         let sortedWord = [...word].sort();
         let sortedWordToCompare = [...words[i]].sort();
 
-        // Compare arrays of letters
+        // Compares arrays of letters
         for (let j = 0; j < word.length; j++)
         {
             if (sortedWord[j] != sortedWordToCompare[j])
