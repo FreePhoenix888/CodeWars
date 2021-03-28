@@ -24,10 +24,12 @@ public static class Kata
 {
     public static int Solution(int value)
     {
+        // If a negative number - returns 0
         if (value < 0) return 0;
 
         int result = 0;
-
+        
+        // Loops over numbers less than the value. Adds the number to the result if a multiply of 3 or 5
         for (int i = 3; i < value; i++)
         {
             if (i % 3 == 0 || i % 5 == 0)
