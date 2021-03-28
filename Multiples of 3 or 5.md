@@ -19,7 +19,8 @@ Note: If the number is a multiple of both 3 and 5, only count it once. Also, if 
 
 # C#
 
-    public static class Kata
+```CS
+     public static class Kata
     {
         public static int Solution(int value)
         {
@@ -38,3 +39,4 @@ Note: If the number is a multiple of both 3 and 5, only count it once. Also, if 
             return result;
         }
     }
+ ```
