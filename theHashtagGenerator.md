@@ -24,25 +24,29 @@ If the input or the result is an empty string it must return false.
 
 ## 1 Solution:
 
-    function generateHashtag(str) {
-    	return str.length > 140 || str === ""
-    		? false
-    		: "#" + str.split(" ").map(capitalize).join("");
-    }
+```JS
+function generateHashtag(str) {
+  return str.length > 140 || str === ""
+    ? false
+    : "#" + str.split(" ").map(capitalize).join("");
+}
 
-    function capitalize(str) {
-    	return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+```
 
 ## 2 Solution:
 
-    function generateHashtag(str) {
-    	if (str.trim() == ``) return false;
-    	let modifiedStr = str
-    		.split(` `)
-    		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    		.join(``);
-    	let strWithHashtag = `#${modifiedStr}`;
-    	if (strWithHashtag.length > 140) return false;
-    	return strWithHashtag;
-    }
+```JS
+function generateHashtag(str) {
+  if (str.trim() == ``) return false;
+  let modifiedStr = str
+    .split(` `)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(``);
+  let strWithHashtag = `#${modifiedStr}`;
+  if (strWithHashtag.length > 140) return false;
+  return strWithHashtag;
+}
+```
